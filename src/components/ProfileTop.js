@@ -52,13 +52,15 @@ const Button = styled.div`
   font-weight: 500;
   line-height: 40px;
   letter-spacing: 0.1em;
-  border-bottom: 1px solid;
+  border-bottom: 0px solid;
   border-image-source: linear-gradient
     (266.89deg, #982649 -18.13%, #F71735 120.14%); 
   border-image-slice: 1;
   text-transform: uppercase;
   padding: 40px 23px 23px 23px;
   user-select: none;
+  border-image-source: linear-gradient(266.89deg, #982649 -18.13%, #F71735 120.14%);
+  border-image-slice: 1;
   &:hover{
     cursor: pointer;
   }
@@ -105,7 +107,7 @@ export default function ProfileTop() {
             </Column>
           </Row>
           <Column>
-            <div style={{ marginBottom: 113}}>gg
+            <div style={{ marginBottom: 113}}>
               <Image
                 src={'/arrow_right.svg'} 
                 width={32} 
@@ -128,7 +130,7 @@ export default function ProfileTop() {
             home</Button>
           <Button>event history</Button>
           <Button style={{ borderBottom: 
-            `${showTeams == false ? 0 : 1}px solid`}}
+            `${showTeams == true ? 1 : 0}px solid`}}
              onClick={() => showTeams == false ? 
              setShowTeams(true) : setShowTeams(false)}>teams</Button>
           <Button>friends</Button>
