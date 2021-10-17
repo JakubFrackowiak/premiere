@@ -63,6 +63,14 @@ const Spacer = styled(Row)`
   justify-content: space-between;
 `
 
+const Delete = styled(Column)`
+  width: 674px;
+  height: 205px;
+  background: red;
+  transform: translateY(154px);
+  z-index: 30;
+`
+
 export default function Teams() {
 
   const teammates = [
@@ -101,78 +109,79 @@ export default function Teams() {
   return (
       <div>
         {teams.map((team) => 
-        <Box style ={{ marginBottom: 50}}>
-          <Column>
-            <Spacer>
-              <Row style={{ marginTop: 63, marginLeft: 74, }}>
-                {
-                  teammates.map((teammate) =>
-                  <div style={{ marginRight: 27 }}>
-                      <Image
-                        src={`/${teammate.user}.svg`} 
-                        width={89.74} 
-                        height={89.74} 
-                        alt={'teammate-image'} 
-                      />
-                  </div>
-                  )
-                }
-              </Row>
-                <Row>
-                  <Laptop>
-                  <Image
-                      src={'/laptop.svg'} 
-                      width={19.54} 
-                      height={19.54} 
-                      alt={'laptop-image'} 
-                    />
-                  </Laptop>
-                  <Xbox>
-                    <Image
-                      src={'/xbox.svg'} 
-                      width={19.54} 
-                      height={19.54} 
-                      alt={'laptop-image'} 
-                    />
-                  </Xbox>
+          <div>
+          <Box style ={{ marginBottom: 50 }}>
+            <Column>
+              <Spacer>
+                <Row style={{ marginTop: 63, marginLeft: 74, }}>
+                  {
+                    teammates.map((teammate) =>
+                    <div style={{ marginRight: 27 }}>
+                        <Image
+                          src={`/${teammate.user}.svg`} 
+                          width={89.74} 
+                          height={89.74} 
+                          alt={'teammate-image'} 
+                        />
+                    </div>
+                    )
+                  }
                 </Row>
-            </Spacer>
-            <div style={{ marginLeft: 74, marginTop: 46.26 }}>            
-            <TeamName style={{ marginBottom: 27, textTransform: 'uppercase' }}>{team.name}</TeamName>
-            </div>
-            <Row>
-              <Column style={{ marginLeft: 74}}>
-                <GreyText style={{ textTransform: 'uppercase' }}>team wins</GreyText>
-                <Numbers>{team.wins}</Numbers>
-              </Column>
-              <Column style={{ marginLeft: 95, marginRight: 127 }}>
-                <GreyText style={{ textTransform: 'uppercase' }}>team losses</GreyText>
-                <Numbers>{team.losses}</Numbers>
-              </Column>
-              <Column>
-                <GreyText style={{ textTransform: 'uppercase' }}>combined $prem earned</GreyText>
-                <Numbers>{team.prem}</Numbers>
-              </Column>
-            </Row>
-            <Row style={{ marginTop: 103}}>
-              <GradientText style={{ marginLeft: 74, marginRight: 17, textTransform: 'uppercase' }}>edit team</GradientText>
-              <Image
-                  src={'/arrow-right-gradient.svg'} 
-                  width={14.89} 
-                  height={9.3} 
-                  alt={'arrow-right-gradient'} 
-                />
-              <GradientText style={{ marginLeft: 80.11,marginRight: 16, textTransform: 'uppercase' }}>delete team</GradientText>
-              <Image
-                  src={'/arrow-right-gradient.svg'} 
-                  width={14.89} 
-                  height={9.3} 
-                  alt={'arrow-right-gradient'} 
-                />
-            </Row>
-          </Column>
-          
-        </Box>
+                  <Row>
+                    <Laptop>
+                    <Image
+                        src={'/laptop.svg'} 
+                        width={19.54} 
+                        height={19.54} 
+                        alt={'laptop-image'} 
+                      />
+                    </Laptop>
+                    <Xbox>
+                      <Image
+                        src={'/xbox.svg'} 
+                        width={19.54} 
+                        height={19.54} 
+                        alt={'laptop-image'} 
+                      />
+                    </Xbox>
+                  </Row>
+              </Spacer>
+              <div style={{ marginLeft: 74, marginTop: 46.26 }}>            
+              <TeamName style={{ marginBottom: 27, textTransform: 'uppercase' }}>{team.name}</TeamName>
+              </div>
+              <Row>
+                <Column style={{ marginLeft: 74}}>
+                  <GreyText style={{ textTransform: 'uppercase' }}>team wins</GreyText>
+                  <Numbers>{team.wins}</Numbers>
+                </Column>
+                <Column style={{ marginLeft: 95, marginRight: 127 }}>
+                  <GreyText style={{ textTransform: 'uppercase' }}>team losses</GreyText>
+                  <Numbers>{team.losses}</Numbers>
+                </Column>
+                <Column>
+                  <GreyText style={{ textTransform: 'uppercase' }}>combined $prem earned</GreyText>
+                  <Numbers>{team.prem}</Numbers>
+                </Column>
+              </Row>
+              <Row style={{ marginTop: 103}}>
+                <GradientText style={{ marginLeft: 74, marginRight: 17, textTransform: 'uppercase' }}>edit team</GradientText>
+                <Image
+                    src={'/arrow-right-gradient.svg'} 
+                    width={14.89} 
+                    height={9.3} 
+                    alt={'arrow-right-gradient'} 
+                  />
+                <GradientText style={{ marginLeft: 80.11,marginRight: 16, textTransform: 'uppercase' }}>delete team</GradientText>
+                <Image
+                    src={'/arrow-right-gradient.svg'} 
+                    width={14.89} 
+                    height={9.3} 
+                    alt={'arrow-right-gradient'} 
+                  />
+              </Row>
+            </Column>
+          </Box>
+        </div> 
         )}
       </div>
   )
